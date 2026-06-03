@@ -1,0 +1,21 @@
+public class Solution2 {
+    public static int majorityElement(int[] nums) {
+        int maj = nums[0];
+        int count = 1;
+        for(int i = 0; i < nums.length; i++){
+            if(count == 0){
+                maj = nums[i];
+                count = 1;
+            }else if(nums[i] == maj){
+                count++;
+            }else{
+                count--;
+            }
+        }
+        return maj;
+    }
+    public static void main(String[] args){
+        int[] arr = {2,2,1,1,1,2,2};
+        System.out.println(majorityElement(arr));
+    }
+}
